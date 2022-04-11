@@ -1,6 +1,8 @@
 package com.trainig.model;
+public class Book implements Comparable<Book>{
 
-public class Book {
+
+
 	private int bookNumber;
 	private String bookName;
 	private String author;
@@ -46,4 +48,15 @@ public class Book {
 				+ "]";
 	}
 	
+
+
+@Override
+public int compareTo(Book otherObj) {
+	// TODO Auto-generated method stub
+//	if(otherObj.bookNumber<this.bookNumber)return -1;
+//	if(otherObj.bookNumber>this.bookNumber)return 1;
+//	return 0;
+	
+	return otherObj.bookName.compareTo(this.bookName);
+}
 }
