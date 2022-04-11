@@ -53,10 +53,10 @@ public class Book implements Comparable<Book>{
 @Override
 public int compareTo(Book otherObj) {
 	// TODO Auto-generated method stub
-//	if(otherObj.bookNumber<this.bookNumber)return -1;
-//	if(otherObj.bookNumber>this.bookNumber)return 1;
-//	return 0;
+	if(otherObj.bookNumber<this.bookNumber)return -1;
+	if(otherObj.bookNumber>this.bookNumber)return 1;
+	return 0;
 	
-	return otherObj.bookName.compareTo(this.bookName);
+	//return otherObj.bookName.compareTo(this.bookName);
 }
 }

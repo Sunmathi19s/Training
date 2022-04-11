@@ -3,9 +3,16 @@ package com.training;
 import java.util.*;
 
 import com.trainig.model.Book;
+import com.trainig.utils.BookNameComparator;
 import com.training.ifaces.CrudRepository;
 import com.training.services.BookService;
 public class App {
+	
+	public static void print(List<Book> books) {
+		for(Book eachBook:books) {
+		   System.out.println(eachBook);
+	}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -41,7 +48,13 @@ public class App {
    	List<Book> bookList = Service.findAll(); 
    	
    	Collections.sort(bookList);
-   	System.out.println(bookList);
+   	System.out.println("sort by book number");
+   	
+   	print(bookList);
+   	
+   	Collections.sort(bookList,new BookNameComparator());
+   	System.out.println("sort by book name");
+   	print(bookList);
 	}
 
 	
