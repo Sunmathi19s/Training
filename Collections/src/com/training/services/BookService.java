@@ -8,7 +8,7 @@ import com.training.ifaces.CrudRepository;
 
 
 public  class BookService implements CrudRepository {
-	private ArrayList<Book> bookList;
+	private ArrayList<Book> bookList; //syntax
 
 	@Override
 	public boolean add(Book book) {
@@ -18,7 +18,7 @@ public  class BookService implements CrudRepository {
 	
 	public BookService() {
 		super();
-		this.bookList=new ArrayList<>();
+		this.bookList=new ArrayList<>();//value pass  @ syntax
 	}
 
 	@Override
