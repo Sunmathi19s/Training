@@ -3,10 +3,12 @@ package com.training.services;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import com.trainig.model.Book;
 import com.training.ifaces.CrudRepository;
 
+import static java.util.stream.Collectors.*;
 
 public  class BookService implements CrudRepository {
 	private ArrayList<Book> bookList; //syntax
@@ -61,6 +63,30 @@ public  class BookService implements CrudRepository {
 		return newBook;
 	}
 
+
+	
+	public List<Book> findBookGrtThan(double price){
+		return this.bookList.stream().filter(e -> e.getPrice()>price).collect(toList());
+	}
+	
+	public List<Book> sortedByName(){
+		return this.bookList.stream().sorted(Comparator.comparing(Book :: getBookName)).collect(toList());
+
+	}
+	
+	public List<Book> sortedByNumberDesc(){
+		return this.bookList.stream().sorted(Comparator.reverseOrder()).collect(toList());
+	}
+	
+	public List<String> getBookNames(){
+		return this.bookList.stream().map(e -> e.getBookName()).collect(toList());
+	}
+	
+	public List<String> getBookNameGrtThanPrice(double price){
+		return this.bookList.stream().filter(e->e.getPrice()>price).map(e -> e.getBookName()).collect(toList());
+	}
+	
+	
 	public List<Book> getBookGrtThan(double price){
 	List<Book> grtThanList = new ArrayList<>();
 	Predicate<Double> grtThan = (value) -> value>price;
@@ -73,25 +99,6 @@ public  class BookService implements CrudRepository {
 		}
 	});
  return grtThanList;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

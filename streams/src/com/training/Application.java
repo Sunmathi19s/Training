@@ -38,7 +38,9 @@ public class Application {
 	System.out.println(Service.add(html));
 	System.out.println(Service.add(python));
 	
-	print(Service.findAll());
+	//print(Service.findAll());
+	List<String> nameList = ((BookService)Service).getBookNames();
+			nameList.forEach(System.out::println);
 	
 	List<Book> bookList1 = Service.findAll(); 
 //	
@@ -53,6 +55,27 @@ public class Application {
    System.out.println("=======");
    
    print(Service.findAll());
+   
+   List<String> nameList1 = ((BookService)Service).getBookNames();
+   nameList1.forEach(System.out::println);
+   
+   System.out.println("=====");
+   
+   List<String> grtThanNineHundred = ((BookService)Service).getBookNames();
+   grtThanNineHundred.forEach(System.out::println);
+   
+   System.out.println("Sorted by name");
+   
+   List<Book> sortedByName = ((BookService)Service).sortedByName();
+   sortedByName.forEach(System.out::println);
+   
+   System.out.println("=====");
+   
+   System.out.println("sorted by number");
+   
+   List<Book> sortedByNumberDesc = ((BookService)Service).sortedByNumberDesc();
+   sortedByNumberDesc.forEach(System.out::println);
+   System.out.println("=====");
    
 // List<Book> bookList2 = Service.findAll();  
    
@@ -77,5 +100,12 @@ Service.update(react,javaNew);
    System.out.println("Greater than");
    List<Book> bookList2 = ((BookService)Service).getBookGrtThan(800);
    bookList2.forEach(System.out::println);
+   
+   System.out.println("Using streams");
+   ((BookService)Service).findBookGrtThan(100).forEach(System.out::println);
+   
+   System.out.println("======");
 	}
+	
+	
 }

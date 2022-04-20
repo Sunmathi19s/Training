@@ -1,4 +1,4 @@
-package com.training;
+package com.training.model;
 import java.util.List;
 
 import com.trainig.model.Book;
