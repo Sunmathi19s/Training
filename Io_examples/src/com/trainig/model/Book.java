@@ -1,7 +1,15 @@
 package com.trainig.model;
-public class Book implements Comparable<Book>{
+
+import java.io.Serializable;
+
+public class Book implements Comparable<Book>,Serializable{
 
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2022L;
 
 	@Override
 	public int hashCode() {
@@ -54,6 +62,12 @@ public class Book implements Comparable<Book>{
 	private String author;
 	private double price;
 	public Object getPrice;
+	public double discount;
+	
+	public Book(double discount) {
+		super();
+		this.discount = discount;
+	}
 	public Book() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -3,7 +3,37 @@ import java.io.*;
 import java.util.*;
 
 import com.trainig.model.Book;
+
+import com.trainig.model.Book;
 public class BookService {
+	
+	public Object readFromStream(File file) {
+		Object obj = null;
+		
+		try(ObjectInputStream inStream = new ObjectInputStream(new FileInputStream(file))){
+			obj = inStream.readObject();
+			
+		}catch(IOException | ClassNotFoundException e )
+		{
+			e.printStackTrace();
+		}
+		return obj;
+	}
+	
+	public boolean writeToStream(File file , Book book) {
+		boolean result = false;
+		
+		try(ObjectOutputStream  OutputStream =
+				new ObjectOutputStream(new FileOutputStream(file))){
+			
+			OutputStream.writeObject(book);
+			result = true ;
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	public boolean writeToFile(File file,Book book) {
 		boolean result = false;
