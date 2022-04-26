@@ -43,7 +43,7 @@ public class Application {
 			  System.out.println("rows Updated :=" +rowUpdate);
 			
 			  
-			  
+			  //findall
 		     service.findAll().forEach(System.out::println);
 		     
 		    
