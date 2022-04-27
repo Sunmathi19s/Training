@@ -24,16 +24,36 @@ public class MemberRepository implements CrudRepository<Member> {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int add(Member obj) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int add(Member member) {
+		int addrow = 0;
+		
+		String sql = "insert into SHANMAMEMBER3 values(?,?,?,?,?,?,?,?)";
+		try(PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setInt(1,member.getMemberId());
+			pstmt.setString(2,member.getMemberName());
+			pstmt.setString(3,member.getMemberAddress());
+			//pstmt.setDate(4, member.getAccountOpenDate());
+			pstmt.setDate(4,Date.valueOf(member.getAccountOpenDate()));
+			pstmt.setString(5,member.getMemberShipType());
+			pstmt.setDouble(6, member.getFeesPaid());
+			pstmt.setInt(7,member.getMaxBookAllowed());
+			pstmt.setDouble(8, member.getPenaltyAmount());
+			
+			addrow = pstmt.executeUpdate();
+			
+		}catch(SQLException e) { 
+			e.printStackTrace();
+		}
+		
+		
+		return addrow;
 	}
 	
 	public List<Member> findAll() {
 		
              List<Member> memberList = new ArrayList <Member>();
 		
-		String sql = "Select * from  SHANMAMEMBER3";
+		String sql = "Select * from  SHANMAMEMBER3 ";
 		
 		try (PreparedStatement pstmt =con.prepareStatement(sql)){
 			
@@ -71,8 +91,19 @@ public class MemberRepository implements CrudRepository<Member> {
 	}
 
 	public int remove(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		int delrow = 0;
+		String sql = "select * from SHANMAMEMBER3 where product id = ? ";
+		try(PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setInt(18,id);
+			delrow = pstmt.executeUpdate();
+		
+		
+	}catch(SQLException e) {
+		e.printStackTrace();
+	}
+		
+		
+		return delrow;
 	}
 
 	public Member findById(int id) {
