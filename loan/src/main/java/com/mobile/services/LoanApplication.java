@@ -12,6 +12,9 @@ public class LoanApplication {
 		this.customer = customer;
 		this.loanAmount = loanAmount;
 	}
+	public LoanApplication(int applicationNumber2, int customer2, double loanAmount2) {
+		// TODO Auto-generated constructor stub
+	}
 	public int getApplicationNumber() {
 		return applicationNumber;
 	}

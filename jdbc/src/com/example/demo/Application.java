@@ -9,6 +9,10 @@ public class Application {
 	public static void main(String[] args) {
 		Connection con;
 		try {
+			
+			
+			
+		
 			con = DriverManager.getConnection("jdbc:oracle:thin:@10.90.1.105:1521/DEV","HR","HR");
 			
 			ProductService service = new ProductService(con);

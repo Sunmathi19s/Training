@@ -134,6 +134,9 @@ try(PreparedStatement pstmt = con.prepareStatement(sql)){
 		
 		return productList;
 	}
+	
+	
+	
 
 	
 }

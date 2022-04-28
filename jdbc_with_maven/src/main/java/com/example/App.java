@@ -7,7 +7,9 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 import com.example.dao.MemberRepository;
+import com.example.demo.services.Invoice;
 import com.example.demo.services.ProductService;
+
 import com.example.entity.Member;
 import com.example.entity.Product;
 import com.example.util.ConnectionFactory;
@@ -62,13 +64,24 @@ public class App
 		
 		service.findAll().forEach(System.out::println);
 	}
-    public static void main( String[] args )
-    {
-       product();
+   // public static void main( String[] args )
+   //{
+   //    product();
         
 
     	    
-    	    }
-        
+    //	    }
+    
+    public static void main( String[] args ) {
+		
+		Connection con;
+    Connection con1 = ConnectionFactory.getOracleConnection();
+	
+	ProductService service = new ProductService(con1);
+	Product laddu=new Product(96,"laddu",89);
+	Invoice mani=new Invoice(82, " mani", 6,4);
+	
+	service.usingTxn (laddu,mani);
     }
+}
 

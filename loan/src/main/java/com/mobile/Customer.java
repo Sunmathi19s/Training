@@ -4,17 +4,17 @@ public class Customer {
 	
 	private int customerId;
 	private String customerName;
-	private long phoneNumber;
-	private double creditScore;
+	private double phoneNumber;
+	private int creditScore;
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Customer(int customerId,String customerName, long phoneNumber, double creditScore) {
+	public Customer(int customerId,String customerName, double phone_number, int creditScore) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
-		this.phoneNumber = phoneNumber;
+		this.phoneNumber = phone_number;
 		this.creditScore = creditScore;
 	}
 	public int getCustomerId() {
@@ -34,16 +34,16 @@ public class Customer {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
-	public long getPhoneNumber() {
+	public double getPhoneNumber() {
 		return phoneNumber;
 	}
 	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public double getCreditScore() {
+	public int getCreditScore() {
 		return creditScore;
 	}
-	public void setCreditScore(double creditScore) {
+	public void setCreditScore(int creditScore) {
 		this.creditScore = creditScore;
 	}
 
