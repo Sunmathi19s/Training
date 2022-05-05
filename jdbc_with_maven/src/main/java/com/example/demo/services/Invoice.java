@@ -10,7 +10,7 @@ public class  Invoice {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Invoice(int invoiceNumber, String customerName, double quantity, int productRef) {
+	public  Invoice(int invoiceNumber, String customerName, double quantity, int productRef) {
 		super();
 		this.invoiceNumber = invoiceNumber;
 		CustomerName = customerName;

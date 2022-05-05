@@ -168,7 +168,7 @@ try(PreparedStatement pstmt = con.prepareStatement(sql)){
 	
 	public int  usingTxn(Product prd1,Invoice invoice) {
 		int rowAdded =0;
-		int productAddCount = 0;
+		//g int productAddCount = 0;
 		
 		String  addProductsql = "insert into shanma_Product values(?,?,?)";
 		String addInvoicesql = "insert into shanma_invoice values(?,?,?,?)";
@@ -181,7 +181,7 @@ try(PreparedStatement pstmt = con.prepareStatement(sql)){
 			prodstmt.setString(2,prd1.getProductName());
 			prodstmt.setDouble(3, prd1.getPrice());
 			
-			 productAddCount = prodstmt.executeUpdate();
+			int  productAddCount = prodstmt.executeUpdate();
 			
 			invpstmt.setInt(1, invoice.getInvoiceNumber());
 			invpstmt.setString(2, invoice.getCustomerName());
@@ -192,7 +192,7 @@ try(PreparedStatement pstmt = con.prepareStatement(sql)){
 			
 			con.commit();
 			rowAdded = productAddCount;
-			System.out.println("===================");
+			// g System.out.println("===================");
 			System.out.println(rowAdded);
 			
 		}catch(SQLException e) {
