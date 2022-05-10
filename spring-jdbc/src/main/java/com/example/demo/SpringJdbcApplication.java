@@ -1,5 +1,8 @@
 package com.example.demo;
 
+
+import java.util.Optional;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -25,13 +28,19 @@ public class SpringJdbcApplication {
 		//System.out.println("Row Added :="+repo.add(jamun));
 		
 		repo.findAll().forEach(System.out::println);
+		Optional<Product> prd = repo.findById(95);
+		if(prd.isPresent()) {
+			System.out.println(prd.get());
+		}else {
+			System.out.println("hii varala");
+		}
 		
 	//	System.out.println("find Id :="+repo.findById(99));
 		
 	//	System.out.println("delete :="+repo.remove(92));
 		
-		Product laddu = ctx.getBean(Product.class);
-		System.out.println("Update :="+repo.Update(laddu));
+	//	Product laddu = ctx.getBean(Product.class);
+	//	System.out.println("Update :="+repo.Update(laddu));
 	}
 	
 	@Bean

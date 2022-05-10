@@ -71,7 +71,7 @@ public class ProductRepository implements CrudRepository<Product> {
 
 	@Override
 	public int remove(int id) {
-		return template.update("DELETE FROM  shanma_product WHERE product_=?", id);
+		return template.update("DELETE FROM  shanma_product WHERE product_Id=?", id);
 		
 	}
 

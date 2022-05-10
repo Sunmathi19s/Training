@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.mobile.entity;
 
 public class Product {
 
