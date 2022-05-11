@@ -11,21 +11,32 @@
 <body>
 <h1>${title}</h1>
 
+<img src="images/logo.jpg" alt="product">
 
 <form:form method="post" modelAttribute="command">
 
+<div>
 <label>Product Id</label>
 <form:input path="productId" />
+</div>
+<br>
 
+<div>
 <label>Product Name</label>
 <form:input path="productName" />
+</div>
+<br>
 
+<div>
 <label>price</label>
 <form:input path="price" />
+</div>
+<br>
 
+<div>
 <input type = "submit" value="Add">
-
-
+</div>
+<br>
 
  </form:form>
 </body>

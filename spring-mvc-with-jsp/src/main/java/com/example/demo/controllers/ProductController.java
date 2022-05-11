@@ -38,10 +38,11 @@ public class ProductController {
 		rowAdded = this.repo.add(entity);
 		return "succes";
 	} catch (Exception e) {
-		// TODO Auto-generated catch block
+
 		e.printStackTrace();
-		return "failure";
+				return "failure";
 	}
+   
 	}
 	@RequestMapping(value="/product/srch",method=RequestMethod.GET)
 	public String initSearchForm(Model model) {
@@ -67,7 +68,23 @@ public class ProductController {
 		model.addAttribute("delete", entity);
 		return "deletedProduct";
 	}
+	@RequestMapping(value="/",method=RequestMethod.GET)
+	public String inithome(Model model) {
+		model.addAttribute("overview","All Context");
+		return "index";
+	}
 	
+	@RequestMapping(value="/product/update",method=RequestMethod.GET)
+	public String initupdate(Model model) {
+		model.addAttribute("update","update");
+		return "update";
+	}
+	@RequestMapping(value="/product/update",method=RequestMethod.POST)
+	public String delProduct(@RequestParam("id")int id,Model model){
+		int entity = repo.Update(entity);
+		model.addAttribute("delete", entity);
+		return "deletedProduct";
+	}
 
   
 }
