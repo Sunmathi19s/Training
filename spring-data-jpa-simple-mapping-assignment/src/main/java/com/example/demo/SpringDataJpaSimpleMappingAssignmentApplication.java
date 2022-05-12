@@ -40,11 +40,13 @@ public class SpringDataJpaSimpleMappingAssignmentApplication {
 		
 		
 		
+		//---------------find by skill and location-------
 		
+		service.findBySkillANDLoc("supervisor", "navalur").forEach(System.out::println);
 		
+		//-------------find by skill or location---------
 		
-		
-		
+		service.findBySkillOrLocation("manager", "navalur").forEach(System.out::println);
 		
 //		Employee added = service.add(deekshith);
 //		

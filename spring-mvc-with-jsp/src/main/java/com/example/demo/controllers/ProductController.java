@@ -79,12 +79,12 @@ public class ProductController {
 		model.addAttribute("update","update");
 		return "update";
 	}
-	@RequestMapping(value="/product/update",method=RequestMethod.POST)
-	public String delProduct(@RequestParam("id")int id,Model model){
-		int entity = repo.Update(entity);
-		model.addAttribute("delete", entity);
-		return "deletedProduct";
-	}
+//	@RequestMapping(value="/product/update",method=RequestMethod.POST)
+//	public String delProduct(@RequestParam("id")int id,Model model){
+//		int entity = repo.Update(entity);
+//		model.addAttribute("delete", entity);
+//		return "deletedProduct";
+//	}
 
   
 }

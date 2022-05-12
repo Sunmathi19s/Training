@@ -24,7 +24,7 @@ list-style:none;
 <h2>${overview}</h2>
 
 <ol>
-<li ><a href="http://localhost:8080/product">Add</a></li>
+<li ><a href="product">Add</a></li>
 <li><a href="http://localhost:8080/product/srch">find</a></li>
 <li><a href="http://localhost:8080/mvc/home">All Product</a></li>
 <li><a href="http://localhost:8080/product/del">Delete</a></li>

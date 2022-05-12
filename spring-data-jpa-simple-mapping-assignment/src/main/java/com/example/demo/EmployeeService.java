@@ -36,4 +36,11 @@ public class EmployeeService {
 		return this.repo.findBySkillSet(srchString);
 	}
 	
+	public List<Employee> findBySkillANDLoc(String srchSkill,String srchLoc){
+		return this.repo.getBySkillLoc(srchSkill, srchLoc);
+	}
+	public List<Employee> findBySkillOrLocation(String srchSkill,String srchLoc){
+		return this.repo.findBySkillSetOrLocation(srchSkill, srchLoc);
+	}
+	
 }
