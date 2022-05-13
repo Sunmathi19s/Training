@@ -26,8 +26,19 @@ public class Utility {
 	PatientRepository patientRepo;
 	
 	public void create() {
-		doc.setPatientList(patientList);
+		
 		Doctor added=repo.save(doc);
+		
+		for(Patient eachPatient:patientList) {
+			eachPatient.setDoctor(doc);
+			patientRepo.save(eachPatient);
+		}
+		
+		
+		
+		
+		//doc.setPatientList(patientList);
+		
 		if(added!=null) {
 			System.out.println("One Recored added");
 		}
@@ -35,7 +46,7 @@ public class Utility {
 	public void findAll() {
 		List<Doctor> doctors=repo.findAll();
 		for(Doctor eachDoctor:doctors) {
-			System.out.println("DoctorName");
+			System.out.println("DoctorName :="+eachDoctor.getDoctorName());
 			System.out.println("Department := "+eachDoctor.getDepartment());
 			List<Patient> patients=eachDoctor.getPatientList();
 			for(Patient eachPatient:patients) {
@@ -46,9 +57,12 @@ public class Utility {
 	}
 	
 	public void findDoctorFrmPatient() {
-		Patient entity = patientRepo.findById(200).get();
+		Patient entity = patientRepo.findById(300).get();
 		System.out.println(entity.getPatientName());
 		System.out.println(entity.getDoctor());
+		System.out.println(entity.getPatientId());
+		System.out.println(entity.getMobileNumber());
+		
 		
 	}
 

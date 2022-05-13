@@ -1,7 +1,5 @@
 package com.example.demo.entity.bidirectional;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,10 +16,29 @@ import lombok.NoArgsConstructor;
 @Table(name = "shanma_patient_bid")
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class Patient {
 	
+
+	
+
+	@Override
+	public String toString() {
+		return "Patient [patientId=" + patientId + ", patientName=" + patientName + ", mobileNumber=" + mobileNumber
+				+ "]";
+	}
+
+
+
+	public Patient(int patientId, String patientName, long mobileNumber) {
+		super();
+		this.patientId = patientId;
+		this.patientName = patientName;
+		this.mobileNumber = mobileNumber;
+	}
+
+
+
 	@Id
 	@Column(name = "patient_id")
 	int patientId;
@@ -35,7 +52,8 @@ public class Patient {
 	
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="doctor_ref")
+	
+	@JoinColumn(name = "doctor_ref",referencedColumnName="doctor_id")
     private Doctor doctor;
 
 	

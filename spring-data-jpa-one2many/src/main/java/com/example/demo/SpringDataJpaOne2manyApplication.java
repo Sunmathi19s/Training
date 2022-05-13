@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import com.example.demo.entity.Doctor;
 import com.example.demo.entity.Patient;
 import com.example.demo.utils.DoctorUtils;
-import com.example.demo.utils.bidirection.Utility;
+
 
 @SpringBootApplication
 public class SpringDataJpaOne2manyApplication {
@@ -19,8 +19,8 @@ public class SpringDataJpaOne2manyApplication {
 		ConfigurableApplicationContext ctx =
 				SpringApplication.run(SpringDataJpaOne2manyApplication.class, args);
 		
-		//DoctorUtils obj = ctx.getBean(DoctorUtils.class);
-		Utility obj = ctx.getBean(Utility.class);
+		DoctorUtils obj = ctx.getBean(DoctorUtils.class);
+		
 		
 	 
 		obj.create();

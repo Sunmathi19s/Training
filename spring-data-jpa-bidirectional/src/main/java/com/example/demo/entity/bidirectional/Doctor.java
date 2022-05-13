@@ -24,6 +24,12 @@ import lombok.NoArgsConstructor;
 	@NoArgsConstructor
 	public class Doctor {
 		
+		@Override
+		public String toString() {
+			return "Doctor [doctorId=" + doctorId + ", doctorName=" + doctorName + ", department=" + department
+					+ ", phoneNumber=" + phoneNumber + "]";
+		}
+
 		@Id
 		@Column(name = "doctor_id")
 		int doctorId;
@@ -40,7 +46,7 @@ import lombok.NoArgsConstructor;
 		@OneToMany(mappedBy = "doctor",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 		
 		
-		@JoinColumn(name = "doctor_ref",referencedColumnName="doctor_id")
+		
 		List<Patient> patientList;
 
 	}
