@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,6 +49,52 @@ public class DriverController {
 		return this.service.findById(id);
 		
 	}
+	
+	
+	
+	//-------------srch by mobileNumber--------------
+	
+	@GetMapping(path = "/drivers/srch/{mobileNumber}")
+	public List<Driver> getDriverByMobileNumber(@PathVariable("mobileNumber") double number){
+		return this.service.srchByMobileNumber(number);
+		
+	}
+	
+	@GetMapping(path = "/drivers/srch/name/{driverName}")
+	public List<Driver> getDriverByDriverName(@PathVariable("driverName") String srchName){
+		return this.service.findByDriverName(srchName);
+		
+	}
+	
+	@GetMapping(path = "/drivers/srch/rating/{driverRating}")
+	public List<Driver> getDriverByDriverRating(@PathVariable("driverRating") double  rating){
+		return this.service.srchByDriverRating(rating);
+		
+	}
+	
+	
+	
+	//-----------update rating -----------
+	@PutMapping(path = "/drivers/update/{id}/{rating}")
+	public ResponseEntity<String> updateRating(@PathVariable("id")int id,
+			                     @PathVariable("rating")double updatedRating){
+	int rowUpdated =this.service.updateRating(id, updatedRating);
+		
+		 
+		return ResponseEntity.status(200).body(rowUpdated+" row updated");
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 //	@PostMapping(path ="/drivers")

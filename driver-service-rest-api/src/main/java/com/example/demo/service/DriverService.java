@@ -70,4 +70,34 @@ public class DriverService {
 		      return optional;  
 		 }
 	
+	public List<Driver> findByDriverName(String srchName){
+		return this.repo.findByDriverName(srchName);
+	}
+	
+	public List<Driver> srchByMobileNumber(double number){
+		return this.repo.findBymobileNumber(number);
+	}
+	
+	public List<Driver> srchByDriverRating(double  rating){
+		return this.repo.searchByRating(rating);
+	}
+	
+	public int updateRating(int id,double  updatedrating){
+		return this.repo.modifyRating(id,updatedrating);
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
