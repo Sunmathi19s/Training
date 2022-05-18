@@ -86,6 +86,15 @@ public class DriverController {
 	}
 	
 	
+	@GetMapping(path = "/drivers/sort/{propName}")
+	public List<Driver> getDriverSortedList(@PathVariable("propName") String propName){
+		return this.service.sortedList(propName);
+		
+	}
+	
+	
+	
+	
 	
 	
 	
@@ -138,7 +147,7 @@ public class DriverController {
 //
 //	}
       
-      //--------------------delete by id in post man--------------
+      //--------------------delete by id in post man--------------.
       @DeleteMapping(path="/drivers/{id}")
 
   	

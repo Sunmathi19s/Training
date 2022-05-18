@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Driver;
 import com.example.demo.repo.DriverRepository;
+import org.springframework.data.domain.Sort;
 
 @Service
 public class DriverService {
@@ -88,7 +89,9 @@ public class DriverService {
 
 	
 	
-	
+	public List<Driver> sortedList(String propName){
+		return this.repo.findAll(Sort.by(propName));
+	}
 	
 	
 	
