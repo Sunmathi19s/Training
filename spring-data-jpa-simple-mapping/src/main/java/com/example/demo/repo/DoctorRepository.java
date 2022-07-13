@@ -19,7 +19,7 @@ public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
 	@Query(nativeQuery = true,
 			value="select * from shanma_doctor where doctor_name=:docName or department=:dept")
 	
-	public List<Doctor> getByNameDept(@Param("docName") 
-	             String docName,@Param("dept") String dept);
+	public List<Doctor> getByNameDept(@Param("docName") String docName
+	             ,@Param("dept") String dept);
 
 }

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.*;
 import java.util.Scanner;
 
 
@@ -28,8 +27,10 @@ public class Fruit {
 		
 		
 		try {
-			FileWriter myWriter = new FileWriter("Fruit.txt");
-			myWriter.write("Apple is red in colour, Orange is round in shape, Banana is good for health, Grapes will grow as bunch, Mango is a seasonal fruit");
+			FileWriter myWriter = new FileWriter("File.txt");
+			myWriter.write("Apple is red in colour, Orange is round in shape,"
+					+ " Banana is good for health, Grapes will grow as bunch,"
+					+ " Mango is a seasonal fruit");
 			myWriter.close();
 			System.out.println("Successfully Write the file");
 			
@@ -38,10 +39,13 @@ public class Fruit {
 			e.printStackTrace();
 		}
 		
-		try {
-			File myFile= new File("Fruit.txt");
-			Scanner myReader= new Scanner(myFile);
-			while(myReader.hasNextLine()) {
+
+
+		
+   	try {
+		File myFile= new File("File.txt");
+		Scanner myReader= new Scanner(myFile);
+				while(myReader.hasNextLine()) {
 				String data= myReader.nextLine();
 				System.out.println(data);
 			}
@@ -53,15 +57,12 @@ public class Fruit {
 		
 		File myFile=new File("Fruit.txt");
 		if(myFile.delete()) {
-			System.out.println("Deleted the file:"+myFile.getName());
-			
-		}else {
+		System.out.println("Deleted the file:"+myFile.getName());
+		
+	}else {
 			System.out.println("Failed to delete ");
 		}
 
-
-		
-		
 		
 	}
 
