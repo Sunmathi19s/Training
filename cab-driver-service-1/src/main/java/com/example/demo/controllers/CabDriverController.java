@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 
 import org.aspectj.lang.annotation.DeclareError;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.RuntimeBeanNameReference;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,6 +25,14 @@ public class CabDriverController {
 	
 	@Autowired
 	private CabDriverService service;
+	
+	//-------------injecting the port-------------
+	//-----------it give a value where its store-----------
+	@Value("${server.port}")
+	private String port; 
+	
+	
+	
 	
 	@PostMapping
 	public CabDriver add(@RequestBody CabDriver entity) {
@@ -52,4 +61,15 @@ public class CabDriverController {
 //	  	new NoSuchElementException("Element not found"));
 //
 //	  	     return ResponseEntity.ok().body(driver);
+	
+	@GetMapping(path = "/srch/{name}")
+	public CabDriver findByName(@PathVariable("name") String name) {
+		
+		CabDriver found = this.service.findByDriverName(name);
+		
+		found.setLocation(found.getLocation()+":" +port);
+		
+		return found;
+	}
+	
 }

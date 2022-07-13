@@ -28,3 +28,6 @@ management:
       exposure:
         include:
         - "*"  
+        
+server:
+  port: 6060
