@@ -1,0 +1,20 @@
+img{
+    width:100px;
+    height:100px;
+    border:2px solid #0000ff;
+}
+table{
+    border: 1px solid #1199bb;
+    margin-left: auto;
+    margin-right:auto;
+}
+tr,th,td{
+    border: 1px solid #1199bb;
+}
+h2{
+   
+       
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        
+}
