@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Taxi</title>
+    <style>
+        .pinkcolor{
+            color:brown
+        }
+        body{
+            
+            background-attachment: fixed;
+            background-image:url(../images/travel.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .container{
+            width: 50px;
+            height: 50px;
+            margin-left: 40%;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1 > Form Registration</h1>
+        <section>
+       
+        <form action="index.html" method="get"  >
+            <div class="container">
+            <div>
+                <label style=font-size:1.2em name="customerName"> CustomerName</label><span class="pinkcolor">*</span>
+                <input type="text" name="customerName" id="customerName"placeholder="customerName" required>
+                </div>
+                <div>
+                <label style=font-size:1.2em for="requestedDate&Time">RequestedDate&Time</label>
+                <input type="date" name="requestedDate&Time" id="requestedDate&Time">
+            </div>
+            <div>
+                <label style=font-size:1.2em for="pickUpPoint">PickUpPoint</label><span class="pinkcolor">*</span>
+                <input type="text" name="pickUpPoint" id="pickUpPoint" placeholder="pickUp Point" readonly>
+                
+            </div>
+            <div>
+                <label style=font-size:1.2em for="dropPoint">DropPoint</label><span class="pinkcolor">*</span>
+                <input type="text" name="dropPoint" id="dropPoint" placeholder="Drop Point"  required>
+                
+                
+            </div>
+            <div>
+                <label style=font-size:1.2em for="mobileNo">CustomerMobileNumber</label><span class="pinkcolor">*</span>
+                
+                <input type="tel" name="mobileNo" id="mobileNo" placeholder="Mobile num" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"required>
+                
+            </div>
+        
+
+            <div>
+                <label style=font-size:1.2em for="vechicleType">VechicleType</label><span class="pinkcolor">*</span>
+                <select name="vechicleType" id="vechicleType" required>
+                    <option value="car">Car</option>
+                    <option value="tempo">Tempo Traveller</option>
+                    <option value="bus">Bus</option>
+                </select>
+                
+            </div>
+            <div>
+                <label style=font-size:1.2em for="splIns">SpecialInstruction</label>
+                <textarea id="splIns" name="splIns" rows="4" cols="50" placeholder=" Enter Your Feedback "></textarea>
+            </div>
+            <div>
+                <input type="reset" value="Clear">
+                <span ><input type="submit" value="Register"></span>
+            </div>
+             
+             </div>      
+        </form>
+    </section>
+   
+       
+    </header>
+    
+</body>
+</html>
